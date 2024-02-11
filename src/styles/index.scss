@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    // color-palette reference
+    --btn-color: hsl(224, 30%, 27%);
+    --blue-text: hsl(241, 100%, 89%);
+    --transparent-text: hsla(243, 94%, 88%, 0.54);
+    --red-primary: hsl(0, 100%, 67%);
+    --yellow-primary: hsl(39, 100%, 56%);
+    --green-primary: hsl(166, 100%, 37%);
+    --blue-primary: hsl(234, 85%, 45%);
+
+    --red-bg: hsla(0, 77%, 95%, 0.715);
+    --yellow-bg: hsl(39, 100%, 95%);
+    --green-bg: hsla(166, 61%, 92%, 0.719);
+    --blue-bg: hsla(236, 61%, 91%, 0.782);
+
+    --red-numbers: hsla(0, 7%, 55%, 0.849);
+    --yellow-numbers: hsla(36, 9%, 58%, 0.872);
+    --green-numbers: hsla(166, 8%, 61%, 0.937);
+    --blue-numbers: hsla(237, 9%, 59%, 0.782);
+}
+
+@layer base {
+    html{
+        @apply font-lexend font-medium;
+    }
+    
+}
+
+@layer components {
+    .btn {
+      @apply 
+        mx-11 mb-10 mt-8 px-8 py-4 rounded-full 
+        bg-[--btn-color] cursor-pointer  text-white
+        hover:bg-indigo-700
+        cursor-pointer;
+
+    }
+    .container {
+        @apply flex flex-col sm:flex-row justify-center items-center mx-auto mt-20 w-fit h-fit
+        rounded-3xl 
+        shadow-xl shadow-indigo-100 bg-white overflow-hidden;
+    }
+    .box{
+        @apply flex flex-col justify-center bg-white;
+    }
+    img {
+        @apply p-2;
+    }
+    .results{
+        @apply flex flex-col px-10 gap-4;
+    }
+    .sm_box {
+        @apply flex flex-row justify-between items-center my-2 p-2 rounded-xl;
+
+    }
+    .micro_box{
+        @apply flex flex-row items-center;
+    }
+    
+    // .circle {
+    //         @apply flex flex-col justify-center mx-20 rounded-full w-44 h-44 bg-gradient-to-t from-indigo-600 to-indigo-800;
+    // }
+    h1 {
+        @apply text-xl px-10 pb-6 pt-8;
+    }
+    h2 {
+        @apply text-center;
+    }
+    h3 {
+        @apply text-3xl tracking-wide pt-10 font-semibold text-white;
+    }
+    h4 {
+        @apply text-center px-10 pt-4 pb-12 w-[40ch] sm:w-[36ch] text-[--blue-text] tracking-wide font-medium;
+    }
+    .num_box {
+        @apply flex;
+    }
+    .__circle {
+        @apply flex flex-col justify-center items-center mx-20 rounded-full w-44 h-44 bg-gradient-to-t from-indigo-600 to-indigo-800;
+         h1 {
+            @apply text-6xl p-0 font-extrabold text-white;
+         }
+         h2 {
+            @apply text-lg text-white opacity-50;
+         }
+    }
+    .__summary_pill {
+        @apply px-2 py-2
+        flex justify-between
+        bg-[--bg-color] text-[--text-color]
+        rounded-xl ;
+
+        &>dt {
+           @apply flex pr-20 items-center; 
+        }
+
+        &>dd {
+           @apply flex gap-2 p-1 items-center font-semibold text-black; 
+
+                &:after {
+                    content: '/ 100';
+                    @apply mr-1 opacity-40;
+                }
+        }
+
+
+
+    }
+
+}
+
+// This is how to bring required fonts in
+// also see inclusion of Google font link in the index.pug
+@layer utilities {
+    .font-lexend {
+        font-family: "Hanken Grotesk", sans-serif;
+    }
+}
